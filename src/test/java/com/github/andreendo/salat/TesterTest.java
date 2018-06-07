@@ -43,6 +43,10 @@ public class TesterTest {
 
         when(driverMock.isInInitialState())
                 .thenReturn(Boolean.FALSE, Boolean.TRUE);
+   
+        when(driverMock.execute(any()))
+           .thenReturn(Boolean.TRUE);
+
         
         when(driverMock.isOut())
                 .thenReturn(Boolean.FALSE, Boolean.TRUE, Boolean.FALSE);
