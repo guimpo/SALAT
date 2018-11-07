@@ -147,9 +147,22 @@ public class WebAppDriver implements Driver {
 
     private void handleAlert() {
         try {
-            Alert alert = webDriver.switchTo().alert();
+            Alert alert = webDriver.switchTo().aleclirt();
             alert.accept();
         } catch (NoAlertPresentException ex) {
         }
+    }
+
+    @Override
+    public List<InputElement> getCurrentInputs() {
+        List<WebElement> allInputs = webDriver.findElements(By.cssSelector("input"));
+        List<InputElement> inputs = new ArrayList<>();
+        for(WebElement e : allInputs) {
+            InputElement input = new InputElement();
+            input.setElement(e);
+            input.setContent(e.getText());
+            inputs.add(input);
+        }
+        return inputs;
     }
 }
