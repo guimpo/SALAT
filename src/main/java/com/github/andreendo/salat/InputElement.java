@@ -4,9 +4,9 @@ import org.openqa.selenium.WebElement;
 
 /**
  *
- * @author andreendo
+ * @author paulo
  */
-public class FireableEvent {
+public class InputElement {
     private WebElement element;
     private String content;
     
@@ -20,7 +20,7 @@ public class FireableEvent {
 
     @Override
     public String toString() {
-        return "EVENT CLICK " + element + " " + content;
+        return "INPUT ELEMENT " + element + " " + content;
     }
 
     void setContent(String content) {
