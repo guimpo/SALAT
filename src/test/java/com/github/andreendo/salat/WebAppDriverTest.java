@@ -1,5 +1,6 @@
 package com.github.andreendo.salat;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.junit.After;
@@ -18,7 +19,7 @@ public class WebAppDriverTest {
     
     @BeforeClass
     public static void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", "/home/utfpr/install/selenium/chromedriver");
+        WebDriverManager.chromedriver().setup();
     }
     
     @Before

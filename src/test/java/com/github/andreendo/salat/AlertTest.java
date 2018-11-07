@@ -1,5 +1,6 @@
 package com.github.andreendo.salat;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Random;
@@ -45,7 +46,7 @@ public class AlertTest {
 
     @BeforeClass
     public static void beforeClass() {
-        System.setProperty("webdriver.chrome.driver", "/home/utfpr/install/selenium/chromedriver");
+        WebDriverManager.chromedriver().setup();
     }
 
     @Before
