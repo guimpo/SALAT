@@ -20,4 +20,6 @@ public interface Driver {
 
     public boolean isFaulty();
     
+    public List<InputElement> getCurrentInputs();
+    
 }
