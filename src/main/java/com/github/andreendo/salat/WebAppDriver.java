@@ -147,7 +147,7 @@ public class WebAppDriver implements Driver {
 
     private void handleAlert() {
         try {
-            Alert alert = webDriver.switchTo().aleclirt();
+            Alert alert = webDriver.switchTo().alert();
             alert.accept();
         } catch (NoAlertPresentException ex) {
         }
@@ -155,12 +155,11 @@ public class WebAppDriver implements Driver {
 
     @Override
     public List<InputElement> getCurrentInputs() {
-        List<WebElement> allInputs = webDriver.findElements(By.cssSelector("input"));
+        List<WebElement> allInputs = webDriver.findElements(By.tagName("input"));
         List<InputElement> inputs = new ArrayList<>();
         for(WebElement e : allInputs) {
             InputElement input = new InputElement();
             input.setElement(e);
-            input.setContent(e.getText());
             inputs.add(input);
         }
         return inputs;
